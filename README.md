@@ -19,7 +19,7 @@ vscodeを使用できる場合は拡張機能を導入するだけで使用可�
 [YYMMDD_EE-x_x_name.pdf](YYMMDD_EE-x_x_name.pdf)に使い方を記載しています。[YYMMDD_EE-x_x_name.typ](YYMMDD_EE-x_x_name.typ)も参考にしてください。
 
 ## Tips
-Tinymistの手書きシンボル検索機能が何気に便利です。活用してみてください。
+Tinymistの手書きシンボル検索機能が何気に便利です。
 
 <img src="misc/symbol.png" width="50%">
 
