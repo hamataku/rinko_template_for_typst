@@ -25,7 +25,7 @@
   )
   
   // 文書フォント設定
-  set text(size: 10.5pt, cjk-latin-spacing: auto, font: ja_fonts, lang: "ja")
+  set text(size: 10.5pt, cjk-latin-spacing: auto, font: ja_fonts)
 
   // 段落設定
   set par(leading: 0.55em, first-line-indent: 1em, justify: true)
