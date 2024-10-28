@@ -7,5 +7,6 @@
         ]
     },
     "editor.unicodeHighlight.invisibleCharacters": false,
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "tinymist.exportPdf": "onSave"
 }
