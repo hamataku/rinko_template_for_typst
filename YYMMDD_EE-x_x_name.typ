@@ -17,6 +17,7 @@
 
 なお，このテンプレートは公式のものではなく，あくまで一個人が作成したものであるため，使用にあたっては自己責任でお願いします．
 
+
 = 推奨環境
 vscodeを使用できる場合は拡張機能を導入するだけで使用可能です．
 - VSCode
@@ -37,7 +38,7 @@ vscodeを使用できる場合は拡張機能を導入するだけで使用可�
 placement: auto,
 image("./image/typst_logo.png", width: 90%),
 caption: [*The logo of typst.*],
-)#label("fig:figure1")
+)<fig:figure1>
 ```]
 
 *placement*は*top*，*bottom*，*auto*のいずれかを指定可能で，*auto*を使用すると自動で上か下の近い方に配置されます．
@@ -46,34 +47,34 @@ caption: [*The logo of typst.*],
   placement: auto,
   image("./image/typst_logo.png", width: 90%),
   caption: [*The logo of typst.*],
-)#label("fig:figure1")
+)<fig:figure1>
 
-また，typst0.12.0からは*scope*を指定することで，@fig:figure2 のように複数カラムにまたがる形で図を挿入することが可能になりました．
+また，typst 0.12.0からは*scope*を指定することで，@fig:figure2 のように複数カラムにまたがる形で図を挿入することが可能になりました．
 
 #sourcecode[```typ
 #figure(
 scope: "parent",
 placement: auto,
-image("./image/typst_logo_sawaratsuki.svg", width: 70%),
+image("./image/typst_logo_sawaratsuki.svg", width: 60%),
 caption: [*The logo of typst(sawaratsuki version).*],
-)#label("fig:figure2")
+)<fig:figure2>
 ```]
 
 #figure(
   scope: "parent",
   placement: auto,
-  image("./image/typst_logo_sawaratsuki.svg", width: 70%),
+  image("./image/typst_logo_sawaratsuki.svg", width: 60%),
   caption: [*The logo of typst(sawaratsuki version).*],
-)#label("fig:figure2")
+)<fig:figure2>
 
 = 数式の挿入
 == 通常の数式
-数式は以下の様に記述することで式@eq:1 のように挿入されます．*この時，数式の前後には半角スペースを入れることに注意してください．*
+数式は以下の様に記述することで @eq:1 のように挿入されます．*この時，数式の前後には半角スペースを入れることに注意してください．*
 #sourcecode[```typ
 $ v_"mig" = v_"ref" u_"ref" $
 ```]
 
-$ v_"mig" = v_"ref" u_"ref" $ #label("eq:1")
+$ v_"mig" = v_"ref" u_"ref" $ <eq:1>
 
 == インライン数式
 インライン数式は以下の様に記述することで$v_"mig" = v_"ref" u_"ref"$ のように挿入されます．*数式の前後に半角スペースを入れない場合はインライン数式として挿入されます．*
@@ -82,9 +83,9 @@ $ v_"mig" = v_"ref" u_"ref" $ #label("eq:1")
 $v_"mig" = v_"ref" u_"ref"$
 ```]
 
-== 参考程度の数式
+== 参考数式
 
-以下に参考程度に数式を記述しておくので，適宜コードを参照してください．
+以下に参考程度の数式を記載しておきます．ちなみにtinymistの手書きシンボル検索機能が便利です．
 
 $ bold(upright(v))_"coh,ij" = cases(
   c_"coh"(d_"ij" - d_"ref")(bold(upright(p)_j)-bold(upright(p))_i)/d_"ij" "if" d_"ij" > d_"ref",
@@ -119,11 +120,10 @@ $ J_v (t) = ||accent(p, ".")_i (t) - v_p||_2^2 $
 
 = 参照や引用
 == 参照
-```#label("fig:figure1")```のように参照したい項目にラベルを付与しておき，```@fig:figure1```のようにすることで参照することができます．図や表，数式，章などに対して参照することができます．
+```<fig:figure1>```のように参照したい項目にラベルを付与しておき，```@fig:figure1```のようにすることで参照することができます．図や表，数式，章などに対して参照することができます．
 
 == 引用
-bibtexを使用して文献を引用することができます．bibtexはgoogle scholarなどで適宜取得してください．
-*references.bib*にbibtexで文献情報を記述し，以下の様に記述することで文献を引用できます@typst．
+bibtexを使用して文献を引用することができます．*references.bib*にbibtexで文献情報を記述し，以下の様に記述することで文献を引用できます@typst．
 
 #sourcecode[```typ
 ～引用できます@typst．
