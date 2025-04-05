@@ -9,22 +9,21 @@
   etitleSize: 13pt,
   supervisor: [hoge 教授],
   author: [修士課程x年 xx-xxxxxx fuga],
-  abstract: [This is a template for the Rinko report.],
+  abstract: [This is a template for the rinko report.],
 )
 
 = 序論
 この文書は，typstを使用して東京大学電気系の輪講資料を作成するためのテンプレートです．typstはmarkdown likeな記法で文章を記述でき，またlatexよりも高速にコンパイルできるため，輪講資料の作成にオススメです．(というか個人的に布教したいだけです)
 
-なお，このテンプレートは公式のものではなく，あくまで一個人が作成したものであるため，使用にあたっては自己責任でお願いします．
-
+なお，このテンプレートは東大電気系公式のものではなく，あくまで一個人が作成したものであるため，使用にあたっては自己責任でお願いします．
 
 = 推奨環境
 vscodeを使用できる場合は拡張機能を導入するだけで使用可能です．
-- VSCode
+- vscode
 - Python
   - 句読点，読点の変換にのみ使用するためtypstのコンパイルには直接関係ありません．
   - 使用するPCにインストールされていれば良いです．
-- VSCode拡張機能
+- vscode拡張機能
   - Tinymist typst
     - typstをコンパイルするための拡張機能です．
   - Run on Save
@@ -41,7 +40,7 @@ caption: [*The logo of typst.*],
 )<fig:figure1>
 ```]
 
-*placement*は*top*，*bottom*，*auto*のいずれかを指定可能で，*auto*を使用すると自動で上か下の近い方に配置されます．
+*placement*は*none*,*top*，*bottom*，*auto*のいずれかを指定可能で，*auto*を使用すると自動で上か下の近い方に配置されます．
 
 #figure(
   placement: auto,
@@ -103,8 +102,6 @@ $ attach(min, b: bold(upright(X))(k)","bold(upright(U))(k)) sum_(i=1)^N (J_"prop
 
 $ p_(x,0)(t) = a_(3,0) t^3 + a_(2,0) t^2 + a_(1,0) t + a_(0,0) $
 
-$ upright(bold(c) = bold(M)^(-1) bold(b)) $
-
 $ upright(bold(M) = mat(
   bold(F)_0, 0, 0, ..., 0;
   bold(E)_1, bold(F)_1, 0, ..., 0;
@@ -128,5 +125,8 @@ bibtexを使用して文献を引用することができます．*references.bi
 #sourcecode[```typ
 ～引用できます@typst．
 ```]
+
+= 謝辞
+私のことが嫌いになっても，typstのことは嫌いにならないでください．
 
 #rinko_bib("references.bib")

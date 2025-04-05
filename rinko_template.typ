@@ -28,9 +28,7 @@
   set text(size: 10.5pt, cjk-latin-spacing: auto, font: ja_fonts)
 
   // 段落設定
-  set par(leading: 0.55em, first-line-indent: 1em, justify: true)
-  // ブロックの間隔設定
-  show par: set block(spacing: 0.55em)
+  set par(leading: 0.55em, first-line-indent: 1em, justify: true, spacing: 1.1em)
 
   // 数式設定
   set math.equation(numbering: "(1)", supplement: [式])
@@ -50,13 +48,8 @@
 
   // 見出し設定
   set heading(numbering: "1.") // ナンバリング
-  show heading: it => locate(loc => {
-    let levels = counter(heading).at(loc)
-    let deepest = if levels != () {
-      levels.last()
-    } else {
-      1
-    }
+  
+  show heading: it => {
     if it.level == 1 {
       // 見出し1
       set par(first-line-indent: 0pt) // インデント0pt
@@ -64,25 +57,20 @@
       let is-ack = it.body in ([謝辞], [Acknowledgment], [Acknowledgement], [Appendix])
       v(20pt, weak: true) // 見出し上部の余白
       if it.numbering != none and not is-ack {
-        // is-ackの場合
-        numbering("1.", ..levels)
+        counter(heading).display()
         h(8pt, weak: true)
       }
       it.body
       v(13.5pt, weak: true) // 見出し下部の余白
-     } else {
+    } else {
       // 見出し2以降
       set par(first-line-indent: 0pt)
       set text(12pt, weight: 600)
       v(15pt, weak: true) // 見出し上部の余白
-      if it.numbering != none {
-        numbering("1.", ..levels)
-        h(8pt, weak: true)
-      }
-      it.body
+      it
       v(10pt, weak: true) // 見出し下部の余白
-     }
-  })
+    }
+  }
 
   // タイトル表示
   rect(width: 100%)[
